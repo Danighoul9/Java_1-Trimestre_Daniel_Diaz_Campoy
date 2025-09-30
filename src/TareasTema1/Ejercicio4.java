@@ -10,6 +10,8 @@ public class Ejercicio4 {
             Scanner sc = new Scanner(System.in); //Crea el objeto para leer de teclado
 
             // Dados los catetos de un triangulo calcular su hipotenusa y mostrarla
+            //Para hacer la raiz cuadrada usamos el "Math.sqrt"
+            //Para hacer los numeros con un elevado usamos el "Math.pow"
 
             //Variables
             double c1, c2;
@@ -24,7 +26,7 @@ public class Ejercicio4 {
             c1 = sc.nextDouble(); //Leer de teclado un decimal
 
             //Le pedimos al usuario que ingrese el cateto 2 de su triangulo
-            System.out.println(" Ingrese el Cateto 1 de su triangulo: ");
+            System.out.println(" Ingrese el Cateto 2 de su triangulo: ");
             c2 = sc.nextDouble(); //Leer de teclado un decimal
 
             //Realizamos el cálculo
