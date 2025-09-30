@@ -26,12 +26,12 @@ public class Ejercicio3OL {
         //1. resultado = (VIP && valorCompra > 100€) O ((!VIP) && esCumpleaños && valorCompra > 50€)) O tiene pagos pendientes
         //                 T  &&  T =             T  || (  F   &&         T)) =    T || F = T
 
-        condicionesDescuento = (clienteVip && valorCompra > 100) || ((!clienteVip) && esCumpleaños && valorCompra > 50);
+        condicionesDescuento = (clienteVip && valorCompra > 100) || (!clienteVip && esCumpleaños && valorCompra > 50);
         System.out.println("¿Tiene el cliente derecho a descuento?: " + condicionesDescuento);
 
         System.out.println("¿Tiene el cliente pagos pendientes?: " + tienePagosPendientes);
 
-        resultado = condicionesDescuento || tienePagosPendientes;
+        resultado = condicionesDescuento && !tienePagosPendientes;
         System.out.println("Analizando los valores y operaciones logicas, ¿tendria el cliente derecho a este " +
                 "descuento especial?: " + resultado);
 
