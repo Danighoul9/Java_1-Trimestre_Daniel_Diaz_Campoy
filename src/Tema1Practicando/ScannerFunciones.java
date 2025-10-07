@@ -1,4 +1,4 @@
-package TesteandoJava;
+package Tema1Practicando;
 
 import java.util.Scanner;
 

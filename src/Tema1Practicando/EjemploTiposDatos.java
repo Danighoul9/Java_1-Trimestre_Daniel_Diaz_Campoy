@@ -1,4 +1,4 @@
-package TesteandoJava;
+package Tema1Practicando;
 
 public class EjemploTiposDatos {
     public static void main(String[] args) {
