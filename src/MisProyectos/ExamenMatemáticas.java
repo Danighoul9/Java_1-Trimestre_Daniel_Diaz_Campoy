@@ -75,7 +75,7 @@ public class ExamenMatemáticas {
             notaExamen +=0;
         }
 
-        System.out.println("5.);
+        System.out.println("5.");
         r1= sc.nextInt(); //Leer de teclado un entero
 
         if(r1 == 18){

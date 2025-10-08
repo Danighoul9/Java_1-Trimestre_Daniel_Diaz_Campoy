@@ -32,6 +32,7 @@ public class Ejercicios_de_Introducción {
         // d. e es par menor que 50 ->     e < 50
         // e. f es mayor que a, b y c ->     F > a && F > b && F > c
         // f. g es igual a 3, 4 ó 5 ->    G == 3 || G == 4 || G == 5
+
 //-------------------------------------------------------------------------------------------------------------
 
         // 4. Decir si son verdaderas o falsas las siguientes expresiones:
@@ -43,7 +44,6 @@ public class Ejercicios_de_Introducción {
         // e. ((2<=5) || (3>=6)) && (2>–1) -> T || F && T -> T && T -> T
 
 //-------------------------------------------------------------------------------------------------------------
-
 
         // 5. Cumplimenta la siguiente tabla:
 
@@ -181,12 +181,64 @@ public class Ejercicios_de_Introducción {
         //15. Escriba un programa que escriba en la pantalla cuánto le dará su banco después de seis meses si pone
         //2000€ en una cuenta a plazo fijo al 2,75% anual. Recuerde que al pagarle los intereses el banco le
         //retendrá el 18% para hacienda.
+        System.out.println("15.Problema sobre cuanto devolvera en un plazo de medio año depositando 2000€");
 
         //Declaramos variables
-        int plazo= 6;
+        double plazo= 0.5; //0.5 porque es la mitad de un año, 6 meses.
         double deposito= 2000;
         double interesAnual= 2.75;
         double retencion= 18;
+
+        double interesBruto,retencionHacienda,interesNeto;
+        double resultado;
+
+        //Cálculos
+
+        interesBruto= deposito * (interesAnual/100) * plazo;
+        retencionHacienda= interesBruto * (retencion/100);
+        interesNeto= interesBruto - retencionHacienda;
+        resultado= deposito + interesNeto;
+
+        System.out.println("Despues de 6 meses el banco te devolvera un total de: " + resultado + "€");
+
+//-------------------------------------------------------------------------------------------------------------
+
+        //16. Escriba un programa para calcular el área y el volumen de un cilindro. Para ello declare una constante
+        //que guarde el valor de Pi. Declare, también, variables para el diámetro y la altura del cilindro. Suponga
+        //para el ejemplo que el cilindro tiene un diámetro de 15,5cm y una altura de 42,4cm.
+
+        System.out.println("16.Area Y Volumen de un cilindro");
+        double areaTotal,volumen;
+        double areaBases,areaLateral;
+        double radioCilindro;
+        double nPi = Math.PI;
+        double diametro = 15.5;
+        double altura = 42.4;
+
+        //Calculos
+
+        radioCilindro= diametro/2;
+        areaBases= 2 * nPi * Math.pow(radioCilindro,2);
+        areaLateral= 2 * nPi * radioCilindro * altura;
+
+        areaTotal= areaBases + areaLateral;
+        volumen= nPi * Math.pow(radioCilindro,2) * altura;
+
+        //Mostramos resultado
+        System.out.println("Area: " + areaTotal + "cm²");
+        System.out.println("Volumen: " + volumen + "cm³");
+
+//-------------------------------------------------------------------------------------------------------------
+
+        //17. Escriba expresiones que almacenen en variables lo siguiente:
+        //a. Crear un número entero positivo aleatorio entre 1 y 49.
+        //b. Generar un número aleatorio positivo par.
+        //c. Generar un número real aleatorio entre 1 y 10.
+        //d. Crear un número entero negativo entre -50 y -150.
+        //e. Crear un número entero entre -100 y 100.
+        //f.Generar un número aleatorio que sea uno de los siguientes: 5, 7, 33, 125 o 77
+        //g. Crea un generador aleatorio de uno de los meses del año
+
 
 
 
