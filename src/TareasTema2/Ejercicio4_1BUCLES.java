@@ -2,7 +2,7 @@ package TareasTema2;
 
 import java.util.Scanner;
 
-public class Ejercicio4_1 {
+public class Ejercicio4_1BUCLES {
     public static void main(String[] args) {
 
         //Lanza 2 dados (1-6) mientras sean diferentes

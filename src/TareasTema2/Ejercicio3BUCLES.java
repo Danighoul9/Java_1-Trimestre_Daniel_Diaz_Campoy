@@ -2,7 +2,7 @@ package TareasTema2;
 
 import java.util.Scanner;
 
-public class Ejercicio3 {
+public class Ejercicio3BUCLES {
     public static void main(String[] args) {
 
         // 1.Suma los 10 primeros números (0,1,...) y muestra el resultado

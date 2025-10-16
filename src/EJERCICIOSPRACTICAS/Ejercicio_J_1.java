@@ -3,7 +3,7 @@ package EJERCICIOSPRACTICAS;
 import java.util.Scanner;
 
 public class Ejercicio_J_1 {
-    static void main(String[] args) {
+    public static void main(String[] args) {
 
         //Leer tres números que denoten una fecha (día, mes, año). Comprobar que es
         //una fecha válida. Si no es válida escribir un mensaje de error. Si es válida

@@ -2,7 +2,7 @@ package TareasTema2;
 
 import java.util.Scanner;
 
-public class Ejercicio4 {
+public class Ejercicio4BUCLES {
     public static void main(String[] args) {
 
         // 1. Lanza un dado (1-6) de forma aleatoria hasta que salga un 6
