@@ -13,51 +13,41 @@ public class MayorMenorIgualA0 {
         //Vamos a pedir 3 numeros y compararlos con 0
         Scanner sc = new Scanner(System.in);
 
-        int n1,n2,n3;
-
-        System.out.println("Vamos a comparar tus numerso introducidos con 0");
-
-        do {
-            System.out.println("Introduce el numero 1: ");
-            n1 = sc.nextInt();
-
-            System.out.println("Introduce el numero 2: ");
-            n2 = sc.nextInt();
-
-            System.out.println("Introduce el numero 3: ");
-            n3 = sc.nextInt();
+        int n;
+        int num;
+        int i;
+        int contadorMayorA0 = 0;
+        int contadorMenorA0 = 0;
+        int contadorIgualA0 = 0;
 
 
-            //Comparamos n1 con 0
+        System.out.println("Vamos a comparar tus numeros introducidos con 0");
+        System.out.println("¿Cuantos numeros vas a poner?");
+        n = sc.nextInt();
 
-            if(n1 > 0){
-                System.out.println("El numero 1 es mayor a 0");
-            }else if(n1 < 0){
-                System.out.println("EL numero 1 es menor a 0");
+
+        for(i=1; i<=n;i++){
+            System.out.println("Dime un numero");
+            num = sc.nextInt();
+
+            if(num < 0){
+                contadorMayorA0++;
+            } else if (num > 0){
+                contadorMenorA0++;
             }else{
-                System.out.println("El numero 1 es igual a 0");
+                contadorIgualA0++;
             }
 
-            //Comparamos n2 con 0
-            if(n2 > 0){
-                System.out.println("El numero 2 es mayor a 0");
-            }else if(n2 < 0){
-                System.out.println("EL numero 2 es menor a 0");
-            }else{
-                System.out.println("El numero 2 es igual a 0");
-            }
+        }
 
-            //Comparamos n3 con 0
-            if(n3 > 0){
-                System.out.println("El numero 3 es mayor a 0");
-            }else if(n3 < 0){
-                System.out.println("EL numero 3 es menor a 0");
-            }else{
-                System.out.println("El numero 3 es igual a 0");
-            }
+        System.out.println("Hay " + contadorMayorA0 + " numeros mayores a 0");
+        System.out.println("Hay " + contadorMenorA0 + " numeros menores a 0");
+        System.out.println("Hay " + contadorIgualA0 + " numeros iguales a 0");
 
 
-        }while (true);
+
+
+
     }
 }
 
