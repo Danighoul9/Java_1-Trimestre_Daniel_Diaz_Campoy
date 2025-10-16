@@ -1,6 +1,6 @@
 package TareasTema2;
 
-public class Ejercicio9Bucles {
+public class Ejercicio9BUCLES {
     public static void main(String[] args) {
 
         //Lanza un dado de 20 caras 50 veces y dime cuantas sale un critico (20)

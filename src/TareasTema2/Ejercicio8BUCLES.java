@@ -2,7 +2,7 @@ package TareasTema2;
 
 import java.util.Scanner;
 
-public class Ejercicio8BUCLESÇ {
+public class Ejercicio8BUCLES {
 
     public static void main(String[] args) {
 

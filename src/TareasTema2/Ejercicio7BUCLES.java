@@ -1,6 +1,6 @@
 package TareasTema2;
 
-public class Ejericio7BUCLES {
+public class Ejercicio7BUCLES {
     public static void main(String[] args) {
 
         //Números que sea multiplos de 3 pero no de 5 entre 100 y 200
