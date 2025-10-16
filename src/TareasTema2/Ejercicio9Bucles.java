@@ -13,7 +13,7 @@ public class Ejercicio9Bucles {
 
         //Usamos for como opcion de bucle
 
-        for(num = 1; num <= 50; num++){
+        for(num = 1; num <= 500; num++){
 
             //Se pone aqui la variable del dado porque si lo ponemos fuera solo tiraria del dado 1 vez
             int dado = (int) (Math.random()*20 + 1);
