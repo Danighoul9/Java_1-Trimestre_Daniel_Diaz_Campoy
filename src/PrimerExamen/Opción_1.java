@@ -6,6 +6,10 @@ public class Opción_1 {
 
     //Ponemos el scanner
     static Scanner sc = new Scanner(System.in);
+//----------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------
+    //PROCEDIMIENTOS EJ1
 
     //Metodo para el ejercicio 1 para llamar al menu
     public static void llamarMenu(){
@@ -73,6 +77,51 @@ public class Opción_1 {
         circunferencia = 2 * Math.PI * radio;
         System.out.println("La circunferencia con radio " + radio + " es: " + circunferencia);
     }
+//----------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------
+//---------------------------------------------------------------------------------------------------------------------
+
+    //PROCEDIMIENTOS EJ2
+
+    //Procedimiento de tirada Dado EJ2
+    public static int tiradaDado(){
+        return (int)(Math.random()*6)+1;
+    }
+
+    //Procedimiento bonus
+    public static int llamarBonusEscalera(int dadoC1, int dadoC2, int dadoC3, int dadoC4, int dadoC5){
+        int bonus = 0;
+
+        // Bonificación por escalera uso boolean pq se ve mejor que un if la verdad
+        boolean hayUn1 = (dadoC1==1 || dadoC2==1 || dadoC3==1 || dadoC4==1 || dadoC5==1);
+        boolean hayUn2 = (dadoC1==2 || dadoC2==2 || dadoC3==2 || dadoC4==2 || dadoC5==2);
+        boolean hayUn3 = (dadoC1==3 || dadoC2==3 || dadoC3==3 || dadoC4==3 || dadoC5==3);
+        boolean hayUn4 = (dadoC1==4 || dadoC2==4 || dadoC3==4 || dadoC4==4 || dadoC5==4);
+        boolean hayUn5 = (dadoC1==5 || dadoC2==5 || dadoC3==5 || dadoC4==5 || dadoC5==5);
+        boolean hayUn6 = (dadoC1==6 || dadoC2==6 || dadoC3==6 || dadoC4==6 || dadoC5==6);
+
+        boolean escalera = (hayUn1 && hayUn2 && hayUn3 && hayUn4 && hayUn5) ||
+                (hayUn2 && hayUn3 && hayUn4 && hayUn5 && hayUn6);
+
+        if (escalera) {
+            bonus += 10;
+            System.out.println("---Escalera de numeros (+10 puntos)---");
+        }
+
+        // Bonificación por cinco iguales
+        if (dadoC1==dadoC2 && dadoC2==dadoC3 && dadoC3==dadoC4 && dadoC4==dadoC5) {
+            bonus += 20;
+            System.out.println("---AFORTUNADO (+20 puntos)---");
+        }
+
+        return bonus;
+    }
+
+
+//----------------------------------------------------------------------------------------------------------------------
+
+
 
     static void main(String[] args) {
         //OPCIÓN 1
@@ -129,7 +178,11 @@ public class Opción_1 {
             }
         } while (opcion != 4);
 
-
+//----------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------
+//----------------------------------------------------------------------------------------------------------------------
 
         //Cubitus y Humerus 1
         //Marcus Cubitus y Julius Humerus son dos legionarios que se entretienen en sus ratos
@@ -140,6 +193,105 @@ public class Opción_1 {
         //dados iguales. Hay una penalización de 5 puntos si la suma de los dados es menor de 8. El
         //jugador que saca más puntos gana la partida. Escriba un programa que simule varias
         //partidas seguidas de este juego de dados.
+
+
+        int sumaC;
+        int sumaH;
+        int contadorWinsC = 0;
+        int contadorWinsH = 0;
+
+        int turnos = 1;
+        try{
+            System.out.println("¿Cuanto turnos van a jugar estos romanos?");
+            turnos = sc.nextInt();
+        }catch(Exception e){
+            System.out.println(e.getMessage());
+        }
+
+        //Hacemos el bucle con sus respectivos turnos
+        for (int i = 1; i <= turnos; i++){
+
+            //Tiradas Cubitus
+            int dadoC1 = tiradaDado();
+            int dadoC2 = tiradaDado();
+            int dadoC3 = tiradaDado();
+            int dadoC4 = tiradaDado();
+            int dadoC5 = tiradaDado();
+            System.out.println("- Tirada CUBITUS: " + dadoC1 + ", " + dadoC2 + ", " + dadoC3 + ", " + dadoC4 + ", "
+                    + dadoC5);
+            //Hacemos la suma de todos los dados
+            sumaC = dadoC1 + dadoC2 + dadoC3 + dadoC4 + dadoC5;
+
+            //Agregamos a la suma una posible bonificación si no la hay se queda con el valor que tenia
+            sumaC = sumaC + llamarBonusEscalera(dadoC1,dadoC2,dadoC3,dadoC4,dadoC5);
+
+            //Penalización por sacar menos de 8 puntos (ya hay que ser desgraciado)
+            if (sumaC < 8) {
+                sumaC = sumaC - 5;
+                System.out.println("** MENUDO FASTIDIO (-5) para Cubitus **");
+            }
+            //Mensaje puntos totales
+            System.out.println("* CUBITUS suma un total de : " + sumaC + " puntos.");
+
+//----------------------------------------------------------------------------------------------------------------------
+
+            //Tiradas Humerus
+            int dadoH1 = tiradaDado();
+            int dadoH2 = tiradaDado();
+            int dadoH3 = tiradaDado();
+            int dadoH4 = tiradaDado();
+            int dadoH5 = tiradaDado();
+            System.out.println("- Tirada HUMERUS: " + dadoH1 + ", " + dadoH2 + ", " + dadoH3 + ", " + dadoH4 + ", "
+                    + dadoH5 + ", ");
+            //Hacemos la suma de todos los dados
+            sumaH = dadoH1 + dadoH2 + dadoH3 + dadoH4 + dadoH5;
+
+
+            //Agregamos a la suma una posible bonificación si no la hay se queda con el valor que tenia
+            sumaH = sumaH + llamarBonusEscalera(dadoH1,dadoH2,dadoH3,dadoH4,dadoH5);
+
+            //Penalización por sacar menos de 8 puntos (ya hay que ser desgraciado)
+            if (sumaH < 8) {
+                sumaH = sumaH - 5;
+                System.out.println("** MENUDO FASTIDIO (-5) para Humerus **");
+            }
+
+            //Mensaje puntos totales
+            System.out.println("* HUMERUS suma un total de : " + sumaH + " puntos.");
+
+            //Cubitus suma puntos si su dado es mayor
+            if (sumaC > sumaH){
+                System.out.println("---------------------------");
+                System.out.println("| Cubitus gana esta ronda |");
+                System.out.println("---------------------------");
+                contadorWinsC++;
+            }
+
+            //Humerus suma puntos si su dado es mayor
+            if (sumaH > sumaC){
+                System.out.println("---------------------------");
+                System.out.println("| Humerus gana esta ronda |");
+                System.out.println("---------------------------");
+                contadorWinsH++;
+            }
+        }
+
+        //Mensaje de rondas ganadas de cada jugador
+        System.out.println("--------------------------");
+        System.out.println("Rondas ganadas Cubitus: " + contadorWinsC);
+        System.out.println("Rondas ganadas Humerus: " + contadorWinsH);
+        System.out.println("--------------------------");
+
+        //if para saber quien es el ganador en base a las rondas ganadas
+        if(contadorWinsC > contadorWinsH){
+            System.out.println("Cubitus es el ganador");
+        }else if ( contadorWinsH > contadorWinsC){
+            System.out.println("Humerus es el ganador");
+        }else{
+            System.out.println("Empate");
+        }
+
+
     }
 
 
